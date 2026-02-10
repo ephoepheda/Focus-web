@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join FOCUS AMU</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <header>
+        <h1>FOCUS AMU</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#programs">Programs</a></li>
+                <li><a href="join.html" style="color: var(--accent-color);">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Join Form Section -->
+    <section id="join" style="margin-top: 60px;">
+        <div class="section-title">
+            <h2>Join the Fellowship</h2>
+        </div>
+        <div class="join-container">
+            <p style="text-align: center; margin-bottom: 20px;">We are excited to welcome you! Please fill out the form below.</p>
+            
+            <form action="join.php" method="POST" id="joinForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" name="department" placeholder="e.g. Computer Science" required>
+                </div>
+                <div class="form-group">
+                    <label for="year">Study Year</label>
+                    <select id="year" name="year">
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4th Year</option>
+                        <option value="5">5th Year+</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-full">Join Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 FOCUS AMU | Arba Minch University</p>
+    </footer>
+
+    <!-- Scripts (if needed for anything else later) -->
+</body>
+</html>

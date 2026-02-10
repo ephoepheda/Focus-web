@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOCUS AMU | Student Fellowship</title>
+    
+    <!-- Importing Google Fonts for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <header>
+        <h1>FOCUS AMU</h1>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#join">Join</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>Welcome to FOCUS AMU</h2>
+        <p>A Student Fellowship of Arba Minch University dedicated to spiritual growth, unity, and leadership.</p>
+        <a href="join.html" class="btn">Join the Fellowship</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-title">
+            <h2>About Us</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/1d6eac30-e267-4282-b6ea-3fd80eb42c8d.png?auth_key=1870748791-25b545fa943549e38bd71b95828770d8-0-7a7e5a00773dbde497f3bdb856e27f27" alt="Focus Amu Fellowship Students">
+            </div>
+            <div class="about-text">
+                <p>FOCUS AMU (Fellowship of Christian University Students) is a vibrant community at Arba Minch University.</p>
+                <p>We are dedicated to helping students grow spiritually, build strong relationships, and develop leadership skills that will serve them throughout their lives. Through worship, study, and service, we strive to make a positive impact on campus and beyond.</p>
+                <p>Whether you are looking for a place to belong, seeking answers, or want to serve others, you are welcome here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs">
+        <div class="section-title">
+            <h2>Our Programs</h2>
+        </div>
+        <div class="programs-grid">
+            <div class="program-card">
+                <i class="fas fa-users"></i>
+                <h3>Weekly Fellowship</h3>
+                <p>Join us every week for uplifting worship, sharing, and community building.</p>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-praying-hands"></i>
+                <h3>Prayer Meetings</h3>
+                <p>Dedicated times for intercession and personal prayer in a supportive environment.</p>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-bible"></i>
+                <h3>Bible Study</h3>
+                <p>Deep dive into the Scriptures to understand and apply God's Word in daily life.</p>
+            </div>
+            <div class="program-card">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Community Outreach</h3>
+                <p>Opportunities to serve the Arba Minch community through various volunteer projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+        <div class="section-title">
+            <h2>Upcoming Events</h2>
+        </div>
+        <div class="events-list">
+            <div class="event-item">
+                <div class="event-date">
+                    <span class="day">15</span>
+                    <span class="month">OCT</span>
+                </div>
+                <div class="event-details">
+                    <h4>Freshman Welcome Program</h4>
+                    <p>Main Campus Auditorium - 2:00 PM</p>
+                </div>
+            </div>
+            <div class="event-item">
+                <div class="event-date">
+                    <span class="day">22</span>
+                    <span class="month">OCT</span>
+                </div>
+                <div class="event-details">
+                    <h4>Leadership Training Workshop</h4>
+                    <p>Student Union Building - 9:00 AM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>© 2026 FOCUS AMU | Arba Minch University</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Growing Together in Faith & Unity</p>
+    </footer>
+
+    <!-- Toast Notification Element -->
+    <div id="toast">Successfully joined! Welcome to the family.</div>
+
+    <script>
+        // --- Mobile Menu Toggle Logic ---
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        const navLinks = document.querySelectorAll('nav a');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            // Change icon from bars to times (X)
+            const icon = mobileMenu.querySelector('i');
+            if(navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                mobileMenu.querySelector('i').classList.remove('fa-times');
+                mobileMenu.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+
+    </script>
+</body>
+</html>
