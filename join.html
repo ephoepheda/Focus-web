@@ -13,8 +13,15 @@
     <!-- Header with Navigation -->
     <header>
         <h1>FOCUS AMU</h1>
+        
+        <!-- FIXED: Added the Mobile Menu Icon (was missing) -->
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
         <nav>
-            <ul>
+            <!-- FIXED: Added id="nav-list" so the script can find it -->
+            <ul id="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#programs">Programs</a></li>
@@ -54,6 +61,8 @@
                         <option value="5">5th Year+</option>
                     </select>
                 </div>
+                
+                <!-- FIXED: Changed <a> to <button type="submit"> -->
                 <button type="submit" class="btn btn-full">Join Now</button>
             </form>
         </div>
@@ -64,6 +73,34 @@
         <p>© 2026 FOCUS AMU | Arba Minch University</p>
     </footer>
 
-    <!-- Scripts (if needed for anything else later) -->
+    <!-- Scripts -->
+    <script>
+        // --- Mobile Menu Toggle Logic ---
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list'); // Fixed ID reference
+        const navLinks = document.querySelectorAll('nav a');
+
+        if(mobileMenu) { 
+            mobileMenu.addEventListener('click', () => {
+                navList.classList.toggle('active');
+                const icon = mobileMenu.querySelector('i');
+                if(navList.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navList.classList.remove('active');
+                    mobileMenu.querySelector('i').classList.remove('fa-times');
+                    mobileMenu.querySelector('i').classList.add('fa-bars');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
