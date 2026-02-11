@@ -365,44 +365,24 @@ footer p {
     to {bottom: 0; opacity: 0;}
 }
 
-/* --- Responsive Queries --- */
+/* --- Mobile Styles --- */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
+    /* ... keep your existing menu styles ... */
+
+    /* Add these lines for the Mobile Join Form */
+    .join-container {
+        padding: 20px; /* Reduces empty space so the form fits on screen */
+        width: 95%;     /* Ensures it doesn't touch the edges */
     }
 
-    nav ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: var(--primary-color);
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 20px 0;
-        text-align: center;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    nav a {
-        margin: 15px 0;
-        display: block;
-    }
-
-    .hero h2 {
-        font-size: 2rem;
+    .btn-full {
+        padding: 15px; /* Makes the button taller and easier to tap */
+        font-size: 1.2rem;
     }
     
-    .event-item {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .event-date {
-        margin-right: 0;
-        margin-bottom: 15px;
+    /* Make sure text inputs are large enough to tap */
+    .form-group input, .form-group select {
+        font-size: 16px; /* Prevents iPhone from zooming in when you click a box */
+        padding: 15px;
     }
 }
